@@ -1,0 +1,76 @@
+# --- Models & Large Data (Downloaded Models) ---
+# モデルディレクトリ全体を除外
+models/
+.locks/
+# 特定のモデル形式
+*.onnx
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.joblib
+*.pb
+*.h5
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# --- Security & Credentials (Crucial) ---
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+certs/
+secrets/
+accounts.json
+credentials.json
+auth.json
+
+# --- Audio & Media (Raw assets) ---
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
+*.kra
+*.mid
+
+# --- Project Specific Outputs & Logs ---
+*.result.txt
+result*.txt
+karatag_debug.log
+*.log
+tmp/
+temp/
+
+# --- Backup Files ---
+*.bak
+*.bak*
+*.swp
+*~
+settings.ini.bak*
+backup/
+
+# --- sample ---
+sample/
+
+# --- Editor ---
+.vscode/
+.idea/
+katatag.code-workspace
