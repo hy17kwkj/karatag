@@ -33,6 +33,13 @@ source .venv/bin/activate
 
 # 3. 必要なライブラリをインストールする
 pip install -r requirements.txt
+
+### Windows環境での注意点 (ctc-segmentation のビルド失敗)
+Windowsでは、`ctc-segmentation` のインストール中に `Microsoft Visual C++ 14.0 or greater is required` というエラーが発生する場合があります。このツールはC++のビルド環境を必要とするため、以下の手順で対応してください。
+
+1. [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) をダウンロードして実行します。
+2. インストーラーのワークロード一覧から **「C++ によるデスクトップ開発」** (Desktop development with C++) にチェックを入れてインストールします。
+3. インストール完了後、**ターミナルを再起動**してから再度 `pip install -r requirements.txt` を実行してください。
 ```
 
 ---
