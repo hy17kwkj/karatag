@@ -19,10 +19,17 @@ class KaraFormatter:
         """アライメント結果をカラオケタグ形式で保存。"""
         lines = []
         for line in lyrics_data:
+            if not line:
+                lines.append("")
+                continue
             formatted_line = ""
+            last_end = 0.0
             for char, start, end in line:
                 ts = self.format_timestamp(start)
                 formatted_line += f"{ts}{char}"
+                last_end = end
+            # 行末に終了時間を追加
+            formatted_line += self.format_timestamp(last_end)
             lines.append(formatted_line)
         Path(output_path).write_text("\n".join(lines), encoding="utf-8")
 
