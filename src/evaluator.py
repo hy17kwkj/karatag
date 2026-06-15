@@ -67,8 +67,9 @@ class AlignmentEvaluator:
 
         diag.append("\n  [パラメータチューニング・ガイド]")
         diag.append("  - 全体的にズレる場合: '--ignore' で歌い出しの直前(例: 0.5s前)を指定してリセットしてください。")
-        diag.append("  - 滑舌が悪い/正しく聞き取れない場合: 'anchor_score' を 0.70 程度に下げ、'alignment_mode = ctc' を試してください。")
-        diag.append("  - 伴奏を歌と誤認する場合: 'auto_interlude_threshold' を 0.05 程度に上げてください。")
+        diag.append("  - アンカーが少ない/ズレが大きい場合: 'anchor_score' を 0.70 程度まで下げてください（被覆率不足時は自動再試行します）。")
+        diag.append("  - alignment_mode: 'linear'(均等分配) / 'hybrid'(母音オンセット補正・推奨) から選択できます。")
+        diag.append("  - 無音区間のノイズを歌と誤認する場合: 'auto_interlude_threshold' を 0.05 程度に上げてください。")
         
         return "\n".join(diag)
 
